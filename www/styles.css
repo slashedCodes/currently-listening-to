@@ -1,0 +1,53 @@
+html,
+body {
+    background-image: url('wallpaper.jpg');
+}
+
+.about {
+    background-image: url('about.png');
+}
+
+.title-bar-icon {
+    padding-top: var(--window-spacing);
+}
+
+.desktop {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 40px;
+    left: 5px;
+    z-index: 0;
+}
+
+.desktop>.icon {
+    color: white;
+    position: absolute;
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-size: 48px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    border: solid 1px transparent;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+.desktop>.icon:hover,
+.desktop>.icon.dragging,
+.desktop>.icon.drop-hover,
+.desktop>.icon.clicked {
+    background-color: rgba(255, 255, 255, .3);
+    border-color: rgba(255, 255, 255, .3);
+}
+
+.desktop>.icon:after {
+    display: block;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+    content: attr(data-label);
+    text-shadow: 0 2px 2px #000;
+}
