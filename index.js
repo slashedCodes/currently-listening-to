@@ -1,4 +1,4 @@
-const { createCanvas, loadImage } = require('canvas');
+const { createCanvas, loadImage, registerFont } = require('canvas');
 const express = require('express');
 const axios = require('axios').default;
 const fs = require('fs');
@@ -25,6 +25,7 @@ if (!fs.existsSync(artworkPath) || !fs.existsSync(templatePath)) {
 }
 
 if(!fs.existsSync("albums")) fs.mkdirSync("albums");
+registerFont(path.join("www", "Segoe UI.ttf"), { family: "Segoe UI" });
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "www", "index.html"));
