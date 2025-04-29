@@ -82,7 +82,7 @@ app.get('/:user', limiter, async (req, res) => {
 
         const stream = canvas.createPNGStream();
         res.setHeader("Content-Type", "image/png");
-        res.setHeader("Cache-Control", "max-age=180, must-revalidate");
+        res.setHeader("Cache-Control", "max-age=100, must-revalidate");
         stream.pipe(res);
     } catch (error) {
         console.error(`${utils.getDate()} - Error fetching recent tracks for user ${req.params.user}: ${error}`);
